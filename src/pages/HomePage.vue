@@ -13,7 +13,6 @@ const ads = computed(() => AppState.ads)
 
 onMounted(() => {
   getPosts()
-  getAds()
 })
 
 async function getPosts() {
@@ -25,14 +24,7 @@ async function getPosts() {
   }
 }
 
-async function getAds() {
-  try {
-    await adsService.getAds()
-  }
-  catch (error) {
-    Pop.meow(error);
-  }
-}
+
 </script>
 
 <template>
@@ -41,22 +33,13 @@ async function getAds() {
       <div class="col-3 text-center">This will be sidebar profile</div>
 
 
-      <div class="col-6 text-center">
+      <div class="col-8 text-center">
         <div v-for="post in posts" :key="post.id" class="card my-3">
           <PostsCard :postProp="post" />
         </div>
       </div>
-      <div class="col-3">
-        <div v-for="ad in ads" :key="ad.id" >
-          <AdsDisplay :adProp="ad" /> 
-        </div>
-    </div>
-      
     </section>
   </div>
 </template>
 
-<style scoped lang="scss">
-
-</style>
-
+<style scoped lang="scss"></style>

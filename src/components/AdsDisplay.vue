@@ -11,13 +11,15 @@ const props = defineProps({
 
 
 <template>
-    <img class="adImg mt-3" :src="adProp.banner" :alt="adProp.title">   
+    <div >
+        <img class="adImg mt-3 img-fluid" :src="adProp.banner" :alt="adProp.title">   
+    </div>
 </template>
 
 
 <style lang="scss" scoped>
 .adImg {
-    height: 100%;
+    height: 10em;
     object-fit: cover;
     width: 100%
 }
