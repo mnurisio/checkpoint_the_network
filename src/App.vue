@@ -12,7 +12,7 @@ import { AppState } from './AppState.js';
     <router-view />
   </main>
   <footer class="bg-dark text-light">
-    Made with 💖 by CodeWorks
+    Sponsored by the International Man of Mystery, Inc.
   </footer>
 </template>
 
