@@ -1,4 +1,5 @@
 import { reactive } from 'vue'
+import { Ad } from './models/Ads.js'
 
 // NOTE AppState is a reactive object to contain app level data
 export const AppState = reactive({
@@ -8,6 +9,9 @@ export const AppState = reactive({
   account: null,
   
   /** @type {import('./models/Posts.js').Post[]} user info from the database*/
-  posts: []
+  posts: [],
+
+  /** @type {import('./models/Ads.js').Ad[]} user info from the database*/
+  ads: []
 })
 
