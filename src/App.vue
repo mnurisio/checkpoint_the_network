@@ -33,6 +33,7 @@ async function getAds() {
     <div class="container-fluid">
       <div class="row">
         <div class="col-8">
+          
           <router-view />
         </div>
         <div class="col-md-3">

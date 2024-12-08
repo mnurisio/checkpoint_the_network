@@ -1,6 +1,7 @@
 <script setup>
 import { AppState } from '@/AppState';
 import AdsDisplay from '@/components/AdsDisplay.vue';
+import PageNav from '@/components/PageNav.vue';
 import PostsCard from '@/components/PostsCard.vue';
 import { adsService } from '@/services/AdsService';
 import { postsService } from '@/services/PostsService';
@@ -8,6 +9,7 @@ import { profileService } from '@/services/ProfileService';
 import Pop from '@/utils/Pop';
 import { computed, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
+
 
 
 
@@ -70,7 +72,7 @@ async function getPostByProfileId() {
                 {{ profile.bio }}
             </div>
         </section>
-
+        <PageNav />
         <section class="row justify-content-between">
             <div class="col-12">
                 <div v-for="post in posts" :key="post.id" class=" m-3 card my-3">

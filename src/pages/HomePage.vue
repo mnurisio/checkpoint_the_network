@@ -1,19 +1,20 @@
 <script setup>
 import { AppState } from '@/AppState';
-import AdsDisplay from '@/components/AdsDisplay.vue';
+import PageNav from '@/components/PageNav.vue';
+import PostForm from '@/components/PostForm.vue';
 import PostsCard from '@/components/PostsCard.vue';
-import { Post } from '@/models/Posts';
-import { adsService } from '@/services/AdsService';
 import { postsService } from '@/services/PostsService';
 import Pop from '@/utils/Pop';
-import { computed, onMounted } from 'vue';
+import { computed, onMounted, onUpdated, watch } from 'vue';
 
 const posts = computed(() => AppState.posts)
-const ads = computed(() => AppState.ads)
+
 
 onMounted(() => {
+  postsService.clearPosts()
   getPosts()
 })
+
 
 async function getPosts() {
   try {
@@ -25,10 +26,13 @@ async function getPosts() {
 }
 
 
+
 </script>
 
 <template>
   <div class="container-fluid">
+    <PageNav />
+    <PostForm />
     <section class="row justify-content-between">
       <div class="col-3 text-center">This will be sidebar profile</div>
 

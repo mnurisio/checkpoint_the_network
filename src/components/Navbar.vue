@@ -21,7 +21,7 @@ function toggleTheme() {
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark px-3">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center">
-        <img alt="logo" src="/img/cw-logo.png" height="45" />
+        <h2 class="navTitle">Welcome to the Network!</h2>
       </div>
     </router-link>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -30,11 +30,6 @@ function toggleTheme() {
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto">
-        <li>
-          <router-link :to="{ name: 'About' }" class="btn text-success lighten-30 selectable text-uppercase">
-            About
-          </router-link>
-        </li>
       </ul>
       <!-- LOGIN COMPONENT HERE -->
       <div>
@@ -49,6 +44,7 @@ function toggleTheme() {
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Marck+Script&display=swap');
 a:hover {
   text-decoration: none;
 }
@@ -61,6 +57,13 @@ a:hover {
   border-bottom: 2px solid var(--bs-success);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+}
+
+.navTitle{
+  text-decoration: underline;
+  font-family: "Marck Script", cursive;
+    font-weight: 600;
+    font-style: normal;
 }
 
 @media screen and (min-width: 576px) {
