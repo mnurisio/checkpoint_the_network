@@ -33,10 +33,7 @@ async function getPosts() {
   <div class="container-fluid">
     <PageNav />
     <PostForm />
-    <section class="row justify-content-between">
-      <div class="col-3 text-center">This will be sidebar profile</div>
-
-
+    <section class="row justify-content-end">
       <div class="col-8 text-center">
         <div v-for="post in posts" :key="post.id" class="card my-3">
           <PostsCard :postProp="post" />

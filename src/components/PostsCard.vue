@@ -64,14 +64,16 @@ async function deletePost() {
             <div class="col-8">
                 <h5 class="card-title text-start">{{ postProp.creator.name }}</h5>
                 <div class="row align-items-center">
-                    <h6 class="text-start col-5">{{ postProp.createdAt.toLocaleDateString() }}</h6>
+                    <h6 class="text-start col-3">{{ postProp.createdAt.toLocaleDateString() }}</h6>
                     <h6 class="col-6 text-start ps-0 mb-1" v-if="postProp.creator.graduated"><i
                             class="mdi mdi-account-school graduated"></i></h6>
                 </div>
             </div>
         </div>
-        <p class="card-text my-3 text-start px-4 fs-5 py-3">{{ postProp.body }}</p>
-        <img class="mb-3" v-if="postProp.imgUrl" :src="postProp.imgUrl" :alt="postProp.creator">
+        <div>
+            <p class="card-text my-3 text-start px-4 fs-5 py-3">{{ postProp.body }}</p>
+            <img class="mb-3 postImg img-fluid" v-if="postProp.imgUrl" :src="postProp.imgUrl" :alt="postProp.creator">
+        </div>
         <div class="row justify-content-end align-items-center p-0 mb-3">
             <button @click="likePostByProfileId()" class="btn btn-outline-primary col-1 text-center"><i
                     class="mdi mdi-heart"></i></button>
@@ -92,6 +94,10 @@ async function deletePost() {
     object-fit: cover;
 }
 
+.postImg{
+    object-fit: cover;
+}
+
 .graduated {
     color: #0D6EFD;
 }
@@ -101,9 +107,3 @@ async function deletePost() {
     border-bottom: 2px dashed blue;
 }
 </style>
-
-<!-- <div v-if="postProp.creatorId == account.id" class="col-4 text-start ms-3 mb-2">
-    <button @click="deletePost()" class="btn btn-danger">
-        <i class="mdi mdi-trash-can"></i>
-    </button>
-</div> -->

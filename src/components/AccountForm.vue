@@ -76,7 +76,7 @@ async function updateAccountInfo(){
             <input v-model="editableAccountData.resume" type="url" class="form-control" id="resume" placeholder="resume">
             <label for="resume">Resume URL</label>
         </div>
-        <button type="submit">Submit</button>
+        <button class="mb-3" type="submit">Submit</button>
     </form>
 </template>
 
